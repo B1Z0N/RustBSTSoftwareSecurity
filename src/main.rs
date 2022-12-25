@@ -1,6 +1,6 @@
 use std::io::{self, BufRead};
 
-mod tree;
+use tree::Tree;
 
 #[derive(Debug)]
 enum Command {
@@ -50,7 +50,7 @@ fn parse_command(input: String) -> Command {
 }
 
 fn command_loop(br: &mut dyn BufRead) {
-    let mut tree = tree::Tree::empty();
+    let mut tree = Tree::empty();
     loop {
         let mut input = String::new();
          
