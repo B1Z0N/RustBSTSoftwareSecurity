@@ -7,7 +7,8 @@ set -e
 
 for i in io-tests/input*.txt; do
     echo "********** Testing $i **********"
+     
     a=$(dirname "$i")
     b=$(basename "$i")
-    cargo run < $i | diff -q "$a/expected_output_for_$b" -
+    cargo run --bin main < $i | diff -q "$a/expected_output_for_$b" -
 done

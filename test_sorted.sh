@@ -7,5 +7,5 @@ set -e
 
 for i in io-tests/dump*.txt; do
     echo "********** Testing $i **********"
-    cargo run < $i | python3 io-tests/tool.py -s
+    cargo run --bin main < $i | python3 io-tests/tool.py -s
 done
